@@ -28,3 +28,12 @@ def add_question_to_db(ids: int, question: str, answer: str, date: str):
     db.commit()
 
 
+def get_any_question(count: int):
+
+    db = next(get_db())
+
+    # question = db.query(Question).all()
+    any_question = db.query(Question).order_by(Question.id.desc()).limit(count).all()
+
+    return any_question
+

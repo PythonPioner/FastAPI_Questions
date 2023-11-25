@@ -7,10 +7,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(docs_url='/')
 
 
-# @app.post("/")
-# async def get_any_questions(questions_num: int = 1):
-#     return scraper(questions_num)
-
 @app.post("/")
 async def get_any_questions(questions_num: int = 1):
-    return await scraper(questions_num)
+    return scraper(questions_num)
+
